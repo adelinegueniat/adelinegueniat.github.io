@@ -15,7 +15,7 @@
       "js": "js",
       "ci": [],
       "sample": "hello",
-      "router": "none"
+      "router": "uirouter"
     }
   }
 }

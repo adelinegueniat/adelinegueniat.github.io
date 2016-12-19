@@ -45,7 +45,8 @@
     "@types/angular": "^1.5.16",
     "@types/angular-mocks": "^1.5.5",
     "@types/jquery": "^2.0.33",
-    "lazypipe": "^1.0.1"
+    "lazypipe": "^1.0.1",
+    "@types/angular-ui-router": "^1.1.34"
   },
   "scripts": {
     "build": "gulp",
