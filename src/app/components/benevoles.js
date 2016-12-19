@@ -1,5 +1,5 @@
 function benevolesController() {
-  this.text = 'My brand new component!';
+  this.text = 'Bénévoles';
 }
 
 angular

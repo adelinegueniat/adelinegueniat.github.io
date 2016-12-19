@@ -1,5 +1,5 @@
 function missionsController() {
-  this.text = 'My brand new component!';
+  this.text = 'Missions';
 }
 
 angular
