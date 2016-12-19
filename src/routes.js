@@ -11,5 +11,13 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('app', {
       url: '/',
       component: 'app'
+    })
+    .state('benevoles', {
+      url: '/benevoles',
+      component: 'benevoles'
+    })
+    .state('missions', {
+      url: '/missions',
+      component: 'missions'
     });
 }
