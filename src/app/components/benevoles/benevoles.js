@@ -5,7 +5,7 @@ function benevolesController() {
 angular
   .module('app')
   .component('benevoles', {
-    templateUrl: 'app/components/benevoles.html',
+    templateUrl: 'app/components/benevoles/benevoles.html',
     controller: benevolesController
   });
 

@@ -5,7 +5,7 @@ function missionsController() {
 angular
   .module('app')
   .component('missions', {
-    templateUrl: 'app/components/missions.html',
+    templateUrl: 'app/components/missions/missions.html',
     controller: missionsController
   });
 

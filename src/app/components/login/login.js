@@ -15,12 +15,12 @@ function loginController() {
     $ctrl.loggedAs = 'utilisateur';
   };
 
-
 }
+
 angular
   .module('app')
   .component('login', {
-    templateUrl: 'app/login.html',
+    templateUrl: 'app/components/login/login.html',
     controller: loginController
   });
 
