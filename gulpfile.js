@@ -4,6 +4,15 @@ const browserSync = require('browser-sync');
 
 const conf = require('./conf/gulp.conf');
 
+var deploy = require('gulp-deploy-git');
+gulp.task('deploy', function () {
+  return gulp.src('**/*', {read: false, cwd: 'dist'})
+    .pipe(deploy({
+      repository: 'git@github.com:heg-web/moncv-bfritscher.git',
+      remoteBranch: 'gh-pages'
+    }));
+});
+
 // Load some files into the registry
 const hub = new HubRegistry([conf.path.tasks('*.js')]);
 
