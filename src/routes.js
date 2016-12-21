@@ -23,5 +23,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('missions', {
       url: '/missions',
       component: 'missions'
+    })
+    .state('inscriptions', {
+      url: '/inscription',
+      component: 'inscriptions'
     });
 }
