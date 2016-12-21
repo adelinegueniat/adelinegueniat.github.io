@@ -1,8 +1,9 @@
 angular
   .module('app')
-  .component('app', {
+  .component('accueil', {
     templateUrl: 'app/hello.html',
     controller: function () {
-      this.hello = 'Hello World!';
+      var $ctrl = this; // Ajout pour sécuriser le this
+      $ctrl.accueil = 'Bienvenue';
     }
   });
