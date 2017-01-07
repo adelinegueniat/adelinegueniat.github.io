@@ -25,7 +25,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .contenu {
-  max-width:800px;
+  max-width:1000px;
   margin:auto;
 }
 
@@ -33,25 +33,27 @@ font-family: 'Montserrat', sans-serif;
   font-family: 'Raleway', sans-serif;
   font-weight:800;
   text-transform:uppercase;
+  border:1px #000 solid;
+  text-align:center;
   }
 
 @media screen and (max-width: 767px) {
     body {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 }
 
 /* sm */
 @media screen and (min-width: 768px) {
     body {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }
 
 /* md */
 @media screen and (min-width: 992px) {
     body {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 }
 
