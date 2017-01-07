@@ -1,3 +1,63 @@
 body {
   background-color: white;
 }
+
+.component {
+  font-family:arial;
+}
+
+.titre {
+font-family: 'Montserrat', sans-serif;
+  font-size:30px;
+
+}
+
+.display-table{
+    display: table;
+    table-layout: fixed;
+    width:100%;
+}
+
+.display-cell{
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+
+.contenu {
+  max-width:800px;
+  margin:auto;
+}
+
+.column-titles {
+  font-family: 'Raleway', sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+  }
+
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 1em;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 1.1em;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 1.3em;
+    }
+}
