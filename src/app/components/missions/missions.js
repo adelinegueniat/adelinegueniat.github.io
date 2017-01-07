@@ -1,11 +1,11 @@
 function missionsController() {
-  this.text = 'My brand new component!';
+  this.text = 'Missions';
 }
 
 angular
   .module('app')
   .component('missions', {
-    templateUrl: 'app/components/missions.html',
+    templateUrl: 'app/components/missions/missions.html',
     controller: missionsController
   });
 
