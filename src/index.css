@@ -37,6 +37,9 @@ font-family: 'Montserrat', sans-serif;
   text-align:center;
   }
 
+.centered {
+    text-align:center;
+}
 @media screen and (max-width: 767px) {
     body {
         font-size: 0.9em;

@@ -1,6 +1,6 @@
 function benevolesController() {
   var $ctrl = this;
-  $ctrl.titre = 'Liste des bénévoles';
+  $ctrl.titre = 'Bénévoles';
   $ctrl.benevoles = [];
 
   $ctrl.newName = '';
