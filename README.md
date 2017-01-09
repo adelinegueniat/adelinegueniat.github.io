@@ -76,17 +76,17 @@ Le répertoire ```projet-fheche_agueniat_2igpt``` a été créé sur ```https://
 
 2) Déployer le dossier **dist** sur une branche gh-pages
 
-2.1. Se déplacer dans le dossier dist : ```cd dist```
+- Se déplacer dans le dossier dist : ```cd dist```
 
-2.2. Initialiser le dossier comme étant un répéretoire git : ```git init```
+- Initialiser le dossier comme étant un répéretoire git : ```git init```
 
-2.3. Créer une branche gh-pages : ```git checkout -b gh-pages```. On se trouve désormais dans la branche gh-pages.
+- Créer une branche gh-pages : ```git checkout -b gh-pages```. On se trouve désormais dans la branche gh-pages.
 
-2.4 Ajouter les fichiers : ```git add .```
+- Ajouter les fichiers : ```git add .```
 
-2.5 Faire un commit : ```git commit```
+- Faire un commit : ```git commit```
 
-2.6 Faire un push : ```git push origin gh-pages```
+- Faire un push : ```git push origin gh-pages```
 
 Ces manipulations ne sont à faire qu'une fois ; après chaque modification, il suffira de faire un ```git add```, ```git commit``` et ```git push```.
 
