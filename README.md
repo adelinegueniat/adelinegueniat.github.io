@@ -58,17 +58,17 @@ Le répertoire ```projet-fheche_agueniat_2igpt``` a été créé sur ```https://
 
 ##### 2.3. Ajout du projet sur GitHub (master)
 
-1) Se déplacer dans le répértoire du projet : ```cd mon-projet```
+    1) Se déplacer dans le répértoire du projet : ```cd mon-projet```
 
-2) Initialiser le répertoire comme étant un répertoire Git : ```git init```
+    2) Initialiser le répertoire comme étant un répertoire Git : ```git init```
 
-3) Ajouter tous les fichiers dans le nouveau répertoire local (staged) : ```git add . ```
+    3) Ajouter tous les fichiers dans le nouveau répertoire local (staged) : ```git add . ```
 
-4) Faire un commit sur les fichiers : ```git commit -m "Mon message de commit"``` 
+    4) Faire un commit sur les fichiers : ```git commit -m "Mon message de commit"``` 
 
-5) Ajouter l'URL du répertoire GitHub (remote repository) au répertoire local : ```git remote add origin mon-URL```
+    5) Ajouter l'URL du répertoire GitHub (remote repository) au répertoire local : ```git remote add origin mon-URL```
 
-6) Faire un push sur le répertoire GitHub : ```git push origin master```
+    6) Faire un push sur le répertoire GitHub : ```git push origin master```
 
 ##### 2.4. Déployer le projet sur gh-pages
 
