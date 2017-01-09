@@ -27,8 +27,7 @@
 
 Pour palier à un bug rencontré dans la récursivité d'une dépendance, il faut forcer la version 3.0.0 qui, elle, est fonctionnelle. 
  1) Créer un fichier ```npm-shrinkwrap.json``` à la racine du projet avec le contenu suivant :
- ```javascript
- {
+> {
          "dependencies": {
              "glob-stream": {
                  "version": "5.3.5",
@@ -39,8 +38,8 @@ Pour palier à un bug rencontré dans la récursivité d'une dépendance, il fau
                  }
              }
          }
-     }```
-     
+}
+
 2) Faire ```npm install``` 
 3) Nettoyer les fichiers temporaires grâce à ```gulp clean```
 
