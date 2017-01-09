@@ -15,16 +15,14 @@
 
 ## 1. Setup du projet
 ##### 1.1. Création du dossier du projet
-```mkdir mon-dossier
-```
-##### 1.2. Création du squelettre du projet
-```cd mon-dossier
-```
-```yo fountain-angular1
-```
+```mkdir mon-dossier```
+
+##### 1.2. Création du squelette du projet
+```cd mon-dossier```, ```yo fountain-angular1```
+
 ##### 1.3. Installation des outils bower, gulp, grunt
-```npm install -g yo bower grunt-cli gulp-cli
-``` 
+```npm install -g yo bower grunt-cli gulp-cli``` 
+
 ##### 1.4. Correction d'un bug d'une dépendance
 
 Pour palier à un bug rencontré dans la récursivité d'une dépendance, il faut forcer la version 3.0.0 qui, elle, est fonctionnelle. 
@@ -41,8 +39,8 @@ Pour palier à un bug rencontré dans la récursivité d'une dépendance, il fau
                  }
              }
          }
-     }
-```
+     }```
+     
 2) Faire ```npm install``` 
 3) Nettoyer les fichiers temporaires grâce à ```gulp clean```
 
