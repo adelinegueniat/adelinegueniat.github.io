@@ -5,31 +5,26 @@
 
     <!-- Marketing Icons Section -->
     <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">
-          Bienvenue sur Nez Rouge !
-        </h1>
-      </div>
-      <div class="col-md-12" style="text-align: center;">
+            <div class="col-md-12" style="text-align: center; padding-top:40px;">
+        
 <div class="panel panel-default" style="display: block; margin-left: auto; margin-right: auto; width:90%; max-width: 400px;">
-  <div class="panel-heading">
+  <!--<div class="panel-heading">
     <h4><i class="fa fa-fw fa-check"></i> Connexion</h4>
-  </div>
+  </div>-->
   <div class="panel-body">
-
+    <img src="./img/opnezrouge.jpg" width="90%" style="padding-bottom: 20px;">
     <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
       <input type="text" class="form-control" id="usr" placeholder="Nom d'utilisateur">
     </div>
     <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">  
       <input type="password" class="form-control" id="pwd" placeholder="Mot de passe">
     </div>
-    <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
-<button class="btn btn-info" style="width: 100%;" ng-click="$ctrl.loggedAsUser()">login user</button>
-</div>
 <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
-<button class="btn btn-primary" style="width: 100%;" ng-click="$ctrl.loggedAsAdmin()">login admin</button>
+<!--<button class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.loggedAsAdmin()">Connexion</button>-->
+<button class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.testlog('usr')">Connexion</button>
 </div>
-<h4>Vous êtes {{ $ctrl.loggedAs }}</h4>
+<h4>Vous êtes {{ $ctrl.utilisateur }}</h4>
+<h4><script>sessionStorage.getItem("testUser");</script></h4>
 
 </div>
 </div>
