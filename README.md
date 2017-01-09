@@ -4,6 +4,7 @@
 #### Participants 
 - Francis Hêche
 - Adeline Gueniat
+
 #### Outils de développement
 - Visual Studio Code
 - Git Shell, GitHub
@@ -11,14 +12,19 @@
 - Angular JS
 - bower : installations de dépendances web
 - grunt / gulp : tâches automatisées
+
 ## 1. Setup du projet
 ##### 1.1. Création du dossier du projet
-```mkdir mon-dossier```
+```mkdir mon-dossier
+```
 ##### 1.2. Création du squelettre du projet
-```cd mon-dossier```
-```yo fountain-angular1```
+```cd mon-dossier
+```
+```yo fountain-angular1
+```
 ##### 1.3. Installation des outils bower, gulp, grunt
-```npm install -g yo bower grunt-cli gulp-cli``` 
+```npm install -g yo bower grunt-cli gulp-cli
+``` 
 ##### 1.4. Correction d'un bug d'une dépendance
 
 Pour palier à un bug rencontré dans la récursivité d'une dépendance, il faut forcer la version 3.0.0 qui, elle, est fonctionnelle. 
