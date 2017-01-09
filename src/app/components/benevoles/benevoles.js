@@ -1,5 +1,14 @@
 function benevolesController() {
-  this.text = 'Bénévoles';
+  var $ctrl = this;
+  $ctrl.titre = 'Bénévoles';
+  $ctrl.benevoles = [];
+
+  $ctrl.newName = '';
+  $ctrl.newFirstName = '';
+  $ctrl.newPhone = '';
+  
+
+  
 }
 
 angular
