@@ -49,6 +49,7 @@ Le répertoire ```projet-fheche_agueniat_2igpt``` a été créé sur ```https://
 ##### 2.2. Choix de deux branches dans le répertoire
 - master : branche pour le développement
 - gh-pages : branche pour le déploiement
+
 ##### 2.3. Ajout du projet sur GitHub (master)
 1) Se déplacer dans le répértoire du projet : ```cd mon-projet```
 2) Initialiser le répertoire comme étant un répertoire Git : ```git init```
