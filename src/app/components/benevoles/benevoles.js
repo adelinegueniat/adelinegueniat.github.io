@@ -1,14 +1,14 @@
 function benevolesController() {
   var $ctrl = this;
   $ctrl.titre = 'Bénévoles';
-  $ctrl.benevoles = ['null'];
+  $ctrl.benevoles = [];
   $ctrl.title = '';
   $ctrl.name = '';
   $ctrl.firstName = '';
   $ctrl.address = '';
   $ctrl.phone = '';
   var listebenevoleskey = 'lbkey';
-
+saveLocalStorage();
   // saveLocalStorage() si nouvelle key //
 
   $ctrl.benevoles = getListe();
@@ -29,8 +29,8 @@ function benevolesController() {
     var firstName = $ctrl.firstName;
     var address = $ctrl.address;
     var phone = $ctrl.phone;
-    var newBenevole = [id, titre, name, firstName, address, phone];
-    $ctrl.benevoles.push(newBenevole);
+    var benevole = [id, titre, name, firstName, address, phone];
+    $ctrl.benevoles.push(benevole);
     saveLocalStorage();
   };
 }
