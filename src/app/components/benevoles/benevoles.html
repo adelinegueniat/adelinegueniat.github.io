@@ -9,6 +9,29 @@
           <a href="#" ng-click="show = !show" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
           </a>
         </h1>
+        <p>
+          <!-- Liste qui affiche le contenu du tableau $ctrl.benevoles -->
+          <ul>
+            <li ng-repeat="e in $ctrl.benevoles track by $index">
+              <!-- Une boucle -->
+              {{ $index +1 }}. {{ e }}
+              <!-- e = objet -->
+            </li>
+          </ul>
+        </p>
+
+
+        <p>
+          <input type="text" ng-model="$ctrl.title">
+          <input type="text" ng-model="$ctrl.name">
+          <input type="text" ng-model="$ctrl.firstName">
+          <input type="text" ng-model="$ctrl.address">
+          <input type="text" ng-model="$ctrl.phone">
+
+          <button ng-click="$ctrl.addToBenevoles()">Ajouter</button>
+        </p>
+
+
 
         <div class="panel panel-info" ng-show="show">
           <div class="panel-heading">
@@ -16,30 +39,30 @@
           </div>
           <div class="col-md-6 col-md-offset-3">
 
-            <form name="form" ng-submit="$ctrl.addBenevole()" role="form">
+            <form name="form" ng-submit="$ctrl.add()" role="form">
               <div class="form-group" ng-class="{ 'has-error': form.titre.$dirty && form.titre.$error.required }">
                 <label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre" class="form-control" ng-model="$ctrl.benevole.titre" required />
+                <input type="text" name="titre" id="titre" class="form-control" ng-model="$ctrl.title" required />
                 <span ng-show="form.titre.$dirty && form.titre.$error.required" class="help-block">Ce champ est obligatoire</span>
               </div>
               <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
                 <label for="name">Nom</label>
-                <input type="text" name="name" id="name" class="form-control" ng-model="$ctrl.benevole.name" required />
+                <input type="text" name="name" id="name" class="form-control" ng-model="$ctrl.name" required />
                 <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Ce champ est obligatoire</span>
               </div>
               <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
                 <label for="firstName">Prénom</label>
-                <input type="text" name="firstName" id="firstName" class="form-control" ng-model="$ctrl.benevole.firstName" required />
+                <input type="text" name="firstName" id="firstName" class="form-control" ng-model="$ctrl.firstName" required />
                 <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">Ce champ est obligatoire</span>
               </div>
               <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
                 <label for="address">Adresse</label>
-                <input type="text" name="address" id="address" class="form-control" ng-model="$ctrl.benevole.address" required />
+                <input type="text" name="address" id="address" class="form-control" ng-model="$ctrl.address" required />
                 <span ng-show="form.address.$dirty && form.address.$error.required" class="help-block">Ce champ est obligatoire</span>
               </div>
               <div class="form-group" ng-class="{ 'has-error': form.phone.$dirty && form.phone.$error.required }">
                 <label for="phone">Téléphone</label>
-                <input type="text" name="username" id="phone" class="form-control" ng-model="$ctrl.benevole.phone" required />
+                <input type="text" name="username" id="phone" class="form-control" ng-model="$ctrl.phone" required />
                 <span ng-show="form.phone.$dirty && form.phone.$error.required" class="help-block">Un numéro de téléphone est requis</span>
               </div>
 
@@ -50,13 +73,12 @@
 
               </div>
             </form>
- {{ benevoles }}
-             <ul>
-    <li ng-repeat="benevole in $ctrl.liste">
-       ({{benevole.firstName}} {{benevole.name}})
-        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
-    </li>
-</ul>
+            {{ liste }}
+            <ul>
+              <li ng-repeat="e in liste">
+                {{ $index + 1 }}. {{ e }} - <a ng-click="vm.deleteUser(user.id)">Delete</a>
+              </li>
+            </ul>
           </div>
 
 
