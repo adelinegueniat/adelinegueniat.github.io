@@ -1,14 +1,23 @@
-function benevolesController() {
+function benevolesController(Benevolesservices) {
   var $ctrl = this;
   $ctrl.titre = 'Bénévoles';
-  $ctrl.benevoles = [];
+  $ctrl.addBenevole = addBenevole;
+  $ctrl.liste = [];
+  $ctrl.showBenevoles = showBenevoles;
 
-  $ctrl.newName = '';
-  $ctrl.newFirstName = '';
-  $ctrl.newPhone = '';
-  
 
-  
+  function showBenevoles() {
+    var benevoles = Benevolesservices.getBenevoles();
+    return benevoles;
+  }
+
+  function addBenevole(benevole) {
+    var benevoles = Benevolesservices.getBenevoles();
+    var lastBenevole = benevoles[benevoles.length - 1] || { id: 0 };
+    benevole.id = lastBenevole.id + 1;
+    benevoles.push(benevole);
+    Benevolesservices.saveLocalStorage();
+  }
 }
 
 angular
