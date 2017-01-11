@@ -55,7 +55,63 @@ function benevolesController() {
   };
 
 
-}
+  // DONNEES TEST
+
+  $ctrl.dataTest = function () {
+    var a = {
+      "titre": "Monsieur",
+      "name": "Alpha",
+      "firstName": "Bertrand",
+      "address": "Rue de la Gare 7, 2000 Neuchâtel",
+      "phone": "032 123 45 67",
+      onDuty: false
+    };
+    var b = {
+      "titre": "Monsieur",
+      "name": "Bravo",
+      "firstName": "Tom",
+      "address": "Rue du lac 22, 2502 Bienne",
+      "phone": "032 987 65 43",
+      onDuty: true
+    };
+    var c = {
+      "titre": "Monsieur",
+      "name": "Charlie",
+      "firstName": "Jake",
+      "address": "Rue des Prés 9, 3000 Berne",
+      "phone": "032 341 60 66",
+      onDuty: false
+    };
+    var d = {
+      "titre": "Madame",
+      "name": "Delta",
+      "firstName": "Irene",
+      "address": "Rue de l'Hôpital 41, 2800 Delémont",
+      "phone": "032 000 11 22",
+      onDuty: false
+    };
+    var e = {
+      "titre": "Madame",
+      "name": "Echo",
+      "firstName": "Aline",
+      "address": "Rue de l'Hôpital 45, 2800 Delémont",
+      "phone": "076 000 11 85",
+      onDuty: true
+    };
+    var f = {
+      "titre": "Monsieur",
+      "name": "Foxtrot",
+      "firstName": "Mark",
+      "address": "Rue des voitures 3, 6000 Chur",
+      "phone": "078 456 28 96",
+      onDuty: false
+    };
+    $ctrl.benevoles.push(a, b, c, d, e, f);
+    saveLocalStorage();
+  };
+  }
+
+
 
 angular
   .module('app')
