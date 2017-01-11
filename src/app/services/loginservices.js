@@ -15,20 +15,15 @@ function Loginservices() {
     } else {
       $window.alert("Erreur ! L'utilisateur et le mot de passe ne correspondent pas !");
     }
+  };
 
-    $ctrl.userLogout = function () {
-      if ($ctrl.userIsLogged()) {
-        $window.alert("Vous êtes déjà déconnecté !");
-      } else {
-        $window.alert("Déconnection effectuée avec succès !");
-      }
-
-      // $window.location = '/accueil';
-    };
-
-    if ($ctrl.userIsLogged) {
-      // $window.location = '/accueil';
+  $ctrl.userLogout = function () {
+    if ($ctrl.userIsLogged()) {
+      $window.alert("Vous êtes déjà déconnecté !");
+    } else {
+      $window.alert("Déconnection effectuée avec succès !");
     }
+    // $window.location = '/accueil';
   };
 
   $ctrl.userIsLogged = function () {

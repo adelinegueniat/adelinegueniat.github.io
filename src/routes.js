@@ -12,9 +12,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'login'
     })
-    .state('hello', {
+    .state('home', {
       url: '/accueil',
-      component: 'hello'
+      component: 'home'
     })
     .state('benevoles', {
       url: '/benevoles',
