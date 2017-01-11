@@ -80,13 +80,13 @@
                 </tr>
 
 
-                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="onDuty">
+                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="!benevole[6]">
                   <td class="hidden-xs">{{ benevole[1] }}</td>
                   <td>{{ benevole[2] }}</td>
                   <td>{{ benevole[3] }}</td>
                   <td class="hidden-xs">{{ benevole[4] }}</td>
                   <td>{{ benevole[5] }}</td>
-                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.putOffDuty"></button></td>
+                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.toggle($index)"></button></td>
                 </tr>
               </table>
             </div>
@@ -111,16 +111,15 @@
 
                 </tr>
               
-                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="!onDuty">
-                  <div ng-model="$ctrl.chosenBenevole">
+                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="benevole[6]">
                   <td class="hidden-xs">{{ benevole[1] }}</td>
                   <td>{{ benevole[2] }}</td>
                   <td>{{ benevole[3] }}</td>
                   <td class="hidden-xs">{{ benevole[4] }}</td>
                   <td>{{ benevole[5] }}</td>
-                  <td class="centered"><button class="btn btn-success glyphicon glyphicon-ok" ng-click="$ctrl.toggle(onDuty)"></button></td>
+                  <td class="centered"><button class="btn btn-success glyphicon glyphicon-ok" ng-click="$ctrl.toggle($index)"></button></td>
                   <td class="centered"><button class="btn btn-danger glyphicon glyphicon-remove-circle" ng-click="$ctrl.removeBenevole($index)"></button>
-                  </td></div>
+                  </td>
                 </tr>
               </table>
             </div>

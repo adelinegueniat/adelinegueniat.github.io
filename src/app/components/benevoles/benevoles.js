@@ -52,8 +52,10 @@ function benevolesController() {
     saveLocalStorage();
   };
 
-  $ctrl.toggle = function (onDuty) {
-    return !onDuty;
+  $ctrl.toggle = function ($index) {
+    var ben = angular.fromJson($ctrl.benevoles);
+    ben[$index][6] = !ben[$index][6];
+    saveLocalStorage();
   };
 
   $ctrl.putOffDuty = function () { };
