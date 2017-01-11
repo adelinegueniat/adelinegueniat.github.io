@@ -9,7 +9,10 @@ function benevolesController() {
   $ctrl.phone = '';
   var listebenevoleskey = 'lbkey';
 
-  // saveLocalStorage() si nouvelle key //
+  // Créer un localStorage à la première utilisation
+  if (localStorage.getItem(listebenevoleskey) === null) {
+    saveLocalStorage();
+  }
 
   $ctrl.benevoles = getListe();
 
@@ -23,7 +26,7 @@ function benevolesController() {
   }
 
   $ctrl.addToBenevoles = function () {
-    var benevole = {"titre": $ctrl.title, "name": $ctrl.name, "firstName": $ctrl.firstName, "address": $ctrl.address, "phone": $ctrl.phone, onDuty: false};
+    var benevole = { "titre": $ctrl.title, "name": $ctrl.name, "firstName": $ctrl.firstName, "address": $ctrl.address, "phone": $ctrl.phone, onDuty: false };
     $ctrl.benevoles.push(benevole);
     saveLocalStorage();
   };
