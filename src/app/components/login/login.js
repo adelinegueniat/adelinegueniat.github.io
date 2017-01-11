@@ -1,6 +1,13 @@
-function loginController() {
+function loginController(Loginservices) {
   var $ctrl = this;
-  $ctrl.text = '';
+
+  $ctrl.getUser = function () {
+    Loginservices.getUser();
+  };
+
+  $ctrl.userLogin = function (usr, pwd) {
+    Loginservices.userLogin(usr, pwd);
+  };
 }
 
 angular
