@@ -23,14 +23,7 @@ function benevolesController() {
   }
 
   $ctrl.addToBenevoles = function () {
-    var id = '';
-    var titre = $ctrl.title;
-    var name = $ctrl.name;
-    var firstName = $ctrl.firstName;
-    var address = $ctrl.address;
-    var phone = $ctrl.phone;
-    var onDuty = false;
-    var benevole = [id, titre, name, firstName, address, phone, onDuty];
+    var benevole = {"titre": $ctrl.title, "name": $ctrl.name, "firstName": $ctrl.firstName, "address": $ctrl.address, "phone": $ctrl.phone, onDuty: false};
     $ctrl.benevoles.push(benevole);
     saveLocalStorage();
   };
@@ -54,7 +47,7 @@ function benevolesController() {
 
   $ctrl.toggle = function ($index) {
     var ben = angular.fromJson($ctrl.benevoles);
-    ben[$index][6] = !ben[$index][6];
+    ben[$index].onDuty = !ben[$index].onDuty;
     saveLocalStorage();
   };
 

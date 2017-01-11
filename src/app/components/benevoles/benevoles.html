@@ -80,12 +80,12 @@
                 </tr>
 
 
-                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="!benevole[6]">
-                  <td class="hidden-xs">{{ benevole[1] }}</td>
-                  <td>{{ benevole[2] }}</td>
-                  <td>{{ benevole[3] }}</td>
-                  <td class="hidden-xs">{{ benevole[4] }}</td>
-                  <td>{{ benevole[5] }}</td>
+                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="benevole.onDuty">
+                  <td class="hidden-xs">{{ benevole.titre }}</td>
+                  <td>{{ benevole.name }}</td>
+                  <td>{{ benevole.firstName }}</td>
+                  <td class="hidden-xs">{{ benevole.address }}</td>
+                  <td>{{ benevole.phone }}</td>
                   <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.toggle($index)"></button></td>
                 </tr>
               </table>
@@ -111,12 +111,12 @@
 
                 </tr>
               
-                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="benevole[6]">
-                  <td class="hidden-xs">{{ benevole[1] }}</td>
-                  <td>{{ benevole[2] }}</td>
-                  <td>{{ benevole[3] }}</td>
-                  <td class="hidden-xs">{{ benevole[4] }}</td>
-                  <td>{{ benevole[5] }}</td>
+                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="!benevole.onDuty">
+                  <td class="hidden-xs">{{ benevole.titre }}</td>
+                  <td>{{ benevole.name }}</td>
+                  <td>{{ benevole.firstName }}</td>
+                  <td class="hidden-xs">{{ benevole.address }}</td>
+                  <td>{{ benevole.phone }}</td>
                   <td class="centered"><button class="btn btn-success glyphicon glyphicon-ok" ng-click="$ctrl.toggle($index)"></button></td>
                   <td class="centered"><button class="btn btn-danger glyphicon glyphicon-remove-circle" ng-click="$ctrl.removeBenevole($index)"></button>
                   </td>
