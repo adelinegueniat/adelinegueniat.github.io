@@ -28,8 +28,8 @@ function benevolesController() {
     saveLocalStorage();
   };
 
-  $ctrl.getBenevolePosition = function () {
-    var position = $ctrl.benevoles.indexOf(); // on utilise la méthode indexOf() pour obtenir la position du nom entré
+  $ctrl.getBenevolePosition = function (benevole) {
+    var position = $ctrl.benevoles.indexOf(benevole); // on utilise la méthode indexOf() pour obtenir la position du nom entré
     return position;
   };
 
@@ -39,17 +39,18 @@ function benevolesController() {
     return benevole;
   };
 
-  $ctrl.removeBenevole = function ($index) {
-    $ctrl.benevoles.splice($index, 1);
-    localStorage.removeItem($index);
+  $ctrl.removeBenevole = function (benevole) {
+    var position = $ctrl.getBenevolePosition(benevole);
+    $ctrl.benevoles.splice(position, 1);
+    localStorage.removeItem(position);
     saveLocalStorage();
   };
 
-  $ctrl.toggle = function ($index) {
-    var ben = angular.fromJson($ctrl.benevoles);
-    ben[$index].onDuty = !ben[$index].onDuty;
+  $ctrl.toggle = function (benevole) {
+    benevole.onDuty = !benevole.onDuty;
     saveLocalStorage();
   };
+
 
 }
 

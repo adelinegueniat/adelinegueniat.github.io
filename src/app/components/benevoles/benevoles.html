@@ -6,7 +6,7 @@
         <h1 class="page-header">
           {{$ctrl.titre}}
 
-          <a href="#" ng-click="show = !show" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
+          <a href="#" ng-click="show = !show; confirm = false;" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
           </a>
         </h1>
 
@@ -47,19 +47,18 @@
               </div>
 
               <div class="form-actions col-lg-4">
-                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Ajouter</button>
-                <img ng-if="$ctrl.dataLoading" src="/img/progress-circle.gif" />
+                <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-primary">Ajouter</button>
 
 
               </div>
             </form>
-
-
-
-
-
           </div>
         </div>
+
+          <div class="alert alert-success" ng-show="confirm">
+            Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste.
+          </div>
+
 
 
 
@@ -86,7 +85,7 @@
                   <td>{{ benevole.firstName }}</td>
                   <td class="hidden-xs">{{ benevole.address }}</td>
                   <td>{{ benevole.phone }}</td>
-                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.toggle($index)"></button></td>
+                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.toggle(benevole)"></button></td>
                 </tr>
               </table>
             </div>
@@ -110,15 +109,15 @@
                   <th class="col-xs-1 col-md-1 col-lg-1 display-cell centered">Supprimer</th>
 
                 </tr>
-              
+
                 <tr ng-repeat="benevole in $ctrl.benevoles | orderBy:'name'" ng-if="!benevole.onDuty">
                   <td class="hidden-xs">{{ benevole.titre }}</td>
                   <td>{{ benevole.name }}</td>
                   <td>{{ benevole.firstName }}</td>
                   <td class="hidden-xs">{{ benevole.address }}</td>
                   <td>{{ benevole.phone }}</td>
-                  <td class="centered"><button class="btn btn-success glyphicon glyphicon-ok" ng-click="$ctrl.toggle($index)"></button></td>
-                  <td class="centered"><button class="btn btn-danger glyphicon glyphicon-remove-circle" ng-click="$ctrl.removeBenevole($index)"></button>
+                  <td class="centered"><button class="btn btn-success glyphicon glyphicon-ok" ng-click="$ctrl.toggle(benevole)"></button></td>
+                  <td class="centered"><button class="btn btn-danger glyphicon glyphicon-remove-circle" ng-click="$ctrl.removeBenevole(benevole)"></button>
                   </td>
                 </tr>
               </table>
