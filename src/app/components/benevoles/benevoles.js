@@ -51,7 +51,6 @@ function benevolesController() {
     saveLocalStorage();
   };
 
-  $ctrl.putOffDuty = function () { };
 }
 
 angular

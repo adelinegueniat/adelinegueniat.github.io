@@ -111,7 +111,7 @@
 
                 </tr>
               
-                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="!benevole.onDuty">
+                <tr ng-repeat="benevole in $ctrl.benevoles | orderBy:'name'" ng-if="!benevole.onDuty">
                   <td class="hidden-xs">{{ benevole.titre }}</td>
                   <td>{{ benevole.name }}</td>
                   <td>{{ benevole.firstName }}</td>
