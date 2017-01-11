@@ -1,23 +1,38 @@
-function benevolesController(Benevolesservices) {
+function benevolesController() {
   var $ctrl = this;
   $ctrl.titre = 'Bénévoles';
-  $ctrl.addBenevole = addBenevole;
-  $ctrl.liste = [];
-  $ctrl.showBenevoles = showBenevoles;
+  $ctrl.benevoles = [];
+  $ctrl.title = '';
+  $ctrl.name = '';
+  $ctrl.firstName = '';
+  $ctrl.address = '';
+  $ctrl.phone = '';
+  var listebenevoleskey = 'lbkey';
+saveLocalStorage();
+  // saveLocalStorage() si nouvelle key //
 
+  $ctrl.benevoles = getListe();
 
-  function showBenevoles() {
-    var benevoles = Benevolesservices.getBenevoles();
-    return benevoles;
+  function getListe() {
+    $ctrl.liste = angular.fromJson(localStorage.getItem(listebenevoleskey));
+    return $ctrl.liste;
   }
 
-  function addBenevole(benevole) {
-    var benevoles = Benevolesservices.getBenevoles();
-    var lastBenevole = benevoles[benevoles.length - 1] || { id: 0 };
-    benevole.id = lastBenevole.id + 1;
-    benevoles.push(benevole);
-    Benevolesservices.saveLocalStorage();
+  function saveLocalStorage() {
+    localStorage.setItem(listebenevoleskey, angular.toJson($ctrl.benevoles));
   }
+
+  $ctrl.addToBenevoles = function () {
+    var id = '';
+    var titre = $ctrl.title;
+    var name = $ctrl.name;
+    var firstName = $ctrl.firstName;
+    var address = $ctrl.address;
+    var phone = $ctrl.phone;
+    var benevole = [id, titre, name, firstName, address, phone];
+    $ctrl.benevoles.push(benevole);
+    saveLocalStorage();
+  };
 }
 
 angular
