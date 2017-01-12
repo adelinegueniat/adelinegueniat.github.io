@@ -13,9 +13,9 @@
 
         <div class="col-lg-12">
 
-          <div class="panel panel-info" ng-show="show">
+          <div class="panel panel-success" ng-show="show">
             <div class="panel-heading">
-              <h5>Ajouter un bénévole</h2>
+              <h4>Ajouter un bénévole</h4>
             </div>
             <div align="center">
               <form name="form" ng-submit="$ctrl.addToBenevoles()" role="form" class="form-group" style="padding-top:20px;">
@@ -45,21 +45,25 @@
                 <span ng-show="form.address.$touched && form.address.$error.required" class="alert-form">Adresse requise.</span>
                 <span ng-show="form.phone.$touched && form.phone.$error.required" class="alert-form">Numéro de téléphone requis</span>
                 <div class="form-actions form-inline smallinput" align="center">
-                  <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-primary btn-sm btn-block">Ajouter</button>
+                  <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-success btn-sm btn-block">Ajouter</button>
                 </div>
               </form>
             </div>
           </div>
+        
+
+        <div class="panel panel-success" ng-show="confirm">
+           <div class="panel-heading">
+          <h4>Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste. <a href="#" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</a></h4>
+        </div>
         </div>
 
-        <div class="alert alert-success" ng-show="confirm">
-          Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste. <a href="#" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</a>
+        <div class="panel panel-danger" ng-show="rollback">
+           <div class="panel-heading">
+          <h4>Opération annulée.</h4>
+           </div>
         </div>
-
-        <div class="alert alert-warning" ng-show="rollback">
-          Opération annulée.
-        </div>
-
+</div>
 
         <div class="col-md-12" id="actifs">
           <div class="panel panel-default">

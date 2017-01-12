@@ -25,52 +25,11 @@
 
 <body ng-app="app">
 
+  <navbar></navbar>
+  <div ui-view style="padding-top: 50px; padding-bottom: 25px"></div>
+  <bottombar style="padding-bottom:0px;"></bottombar>
 
 
-  <!-- Static navbar -->
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
-
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand" href="#" style="color: red;">Opération Nez Rouge</a>
-      </div>
-      <div id="navbar" class="navbar-collapse" ng-class="{collapse: isCollapsed}">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/accueil" ng-click="isCollapsed = true">Accueil</a></li>
-          <li><a href="/missions" ng-click="isCollapsed = true">Missions</a></li>
-          <li><a href="/benevoles" ng-click="isCollapsed = true">Bénévoles</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a><span class="glyphicon glyphicon-user"></span> Francis Hêche</a></li>
-          
-          <li><a href="/login"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </nav>
-
-  
-
-  <ui-view></ui-view>
-
-  <!-- Footer -->
-  <footer>
-    <div class="row">
-      <div class="col-lg-12">
-        <p style="text-align: center;">Copyright &copy; 2017 - Adeline Gueniat et Francis Hêche</p>
-</div>
-</div>
-</footer>
-
-</div>
-<!-- /.container -->
 
 </body>
 

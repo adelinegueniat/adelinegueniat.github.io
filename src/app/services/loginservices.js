@@ -11,7 +11,7 @@ function Loginservices() {
       $ctrl.user = usr;
       $ctrl.pass = pwd;
 
-      $window.alert("Bonjour " + usr + " !");
+      $window.location = '/accueil';
     } else {
       $window.alert("Erreur ! L'utilisateur et le mot de passe ne correspondent pas !");
     }
@@ -23,7 +23,6 @@ function Loginservices() {
     } else {
       $window.alert("Déconnection effectuée avec succès !");
     }
-    // $window.location = '/accueil';
   };
 
   $ctrl.userIsLogged = function () {
@@ -32,6 +31,8 @@ function Loginservices() {
     }
   };
 }
+
+
 
 
 

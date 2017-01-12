@@ -8,7 +8,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-   .state('login', {
+    .state('login', {
       url: '/',
       component: 'login'
     })

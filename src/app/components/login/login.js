@@ -1,5 +1,7 @@
 function loginController(Loginservices) {
   var $ctrl = this;
+  var loginkey = 'lgkey';
+  $ctrl.usrlog = '';
 
   $ctrl.getUser = function () {
     Loginservices.getUser();
