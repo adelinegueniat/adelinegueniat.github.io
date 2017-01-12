@@ -17,49 +17,48 @@
             <div class="panel-heading">
               <h5>Ajouter un bénévole</h2>
             </div>
-
-
-            <form name="form" ng-submit="$ctrl.addToBenevoles()" role="form">
-              <div class="form-group" ng-class="{ 'has-error': form.titre.$dirty && form.titre.$error.required }">
-                <label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre" class="form-control" ng-model="$ctrl.title" required />
-                <span ng-show="form.titre.$dirty && form.titre.$error.required" class="help-block">Ce champ est obligatoire</span>
-              </div>
-              <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
-                <label for="name">Nom</label>
-                <input type="text" name="name" id="name" class="form-control" ng-model="$ctrl.name" required />
-                <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Ce champ est obligatoire</span>
-              </div>
-              <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-                <label for="firstName">Prénom</label>
-                <input type="text" name="firstName" id="firstName" class="form-control" ng-model="$ctrl.firstName" required />
-                <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">Ce champ est obligatoire</span>
-              </div>
-              <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
-                <label for="address">Adresse</label>
-                <input type="text" name="address" id="address" class="form-control" ng-model="$ctrl.address" required />
-                <span ng-show="form.address.$dirty && form.address.$error.required" class="help-block">Ce champ est obligatoire</span>
-              </div>
-              <div class="form-group" ng-class="{ 'has-error': form.phone.$dirty && form.phone.$error.required }">
-                <label for="phone">Téléphone</label>
-                <input type="text" name="username" id="phone" class="form-control" ng-model="$ctrl.phone" required />
-                <span ng-show="form.phone.$dirty && form.phone.$error.required" class="help-block">Un numéro de téléphone est requis</span>
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-primary">Ajouter</button>
-
-
-              </div>
-            </form>
+            <div align="center">
+              <form name="form" ng-submit="$ctrl.addToBenevoles()" role="form" class="form-group" style="padding-top:20px;">
+                <div class="form-inline" ng-class="{ 'has-error': form.titre.$touched && form.titre.$error.required }">
+                  <input type="text" class="smallinput" name="titre" id="titre" placeholder="Titre" class="form-control" ng-model="$ctrl.title"
+                    required />
+                </div>
+                <div class="form-inline" ng-class="{ 'has-error': form.name.$touched && form.name.$error.required }">
+                  <input type="text" class="smallinput" name="name" id="name" placeholder="Nom" class="form-control" ng-model="$ctrl.name"
+                    required />
+                </div>
+                <div class="form-inline" ng-class="{ 'has-error': form.firstName.$touched && form.firstName.$error.required }">
+                  <input type="text" class="smallinput" name="firstName" id="firstName" placeholder="Prénom" class="form-control" ng-model="$ctrl.firstName"
+                    required />
+                </div>
+                <div class="form-inline" ng-class="{ 'has-error': form.address.$touched && form.address.$error.required }">
+                  <input type="text" class="smallinput" name="address" id="address" placeholder="Adresse" class="form-control" ng-model="$ctrl.address"
+                    required />
+                </div>
+                <div class="form-inline" ng-class="{ 'has-error': form.phone.$touched && form.phone.$error.required }">
+                  <input type="text" class="smallinput" name="username" id="phone" placeholder="Numéro de téléphone" class="form-control" ng-model="$ctrl.phone"
+                    required />
+                </div>
+                <span ng-show="form.titre.$touched && form.titre.$error.required" class="alert-form">Titre requis.</span>
+                <span ng-show="form.name.$touched && form.name.$error.required" class="alert-form">Nom requis.</span>
+                <span ng-show="form.firstName.$touched && form.firstName.$error.required" class="alert-form">Prénom requis.</span>
+                <span ng-show="form.address.$touched && form.address.$error.required" class="alert-form">Adresse requise.</span>
+                <span ng-show="form.phone.$touched && form.phone.$error.required" class="alert-form">Numéro de téléphone requis</span>
+                <div class="form-actions form-inline smallinput" align="center">
+                  <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-primary btn-sm btn-block">Ajouter</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
-          <div class="alert alert-success" ng-show="confirm">
-            Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste.
-          </div>
+        <div class="alert alert-success" ng-show="confirm">
+          Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste. <a href="#" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</a>
+        </div>
 
-
+        <div class="alert alert-warning" ng-show="rollback">
+          Opération annulée.
+        </div>
 
 
         <div class="col-md-12" id="actifs">
@@ -74,12 +73,12 @@
                   <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Nom</th>
                   <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Prénom</th>
                   <th class="hidden-xs col-md-2 col-lg-3 display-cell">Adresse</th>
-                  <th class="col-xs-1 col-md-2 col-lg-3 display-cell">Téléphone</th>
-                  <th class="col-xs-1 col-md-1 col-lg-1 display-cell centered">Mettre en congé</th>
+                  <th class="col-xs-2 col-md-2 col-lg-3 display-cell">Téléphone</th>
+                  <th class="col-xs-1 col-md-2 col-lg-1 display-cell centered">Mettre en congé</th>
                 </tr>
 
 
-                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="benevole.onDuty">
+                <tr ng-repeat="benevole in $ctrl.benevoles" ng-if="benevole.isWorking">
                   <td class="hidden-xs">{{ benevole.titre }}</td>
                   <td>{{ benevole.name }}</td>
                   <td>{{ benevole.firstName }}</td>
@@ -110,7 +109,7 @@
 
                 </tr>
 
-                <tr ng-repeat="benevole in $ctrl.benevoles | orderBy:'name'" ng-if="!benevole.onDuty">
+                <tr ng-repeat="benevole in $ctrl.benevoles | orderBy:'name'" ng-if="!benevole.isWorking">
                   <td class="hidden-xs">{{ benevole.titre }}</td>
                   <td>{{ benevole.name }}</td>
                   <td>{{ benevole.firstName }}</td>
@@ -125,7 +124,7 @@
           </div>
         </div>
 
-<center><button class="btn btn-danger btn-sm" ng-click="$ctrl.dataTest()"> Données test</button></center>
+        <center><button class="btn btn-danger btn-sm" ng-click="$ctrl.dataTest()"> Données test</button></center>
 
       </div>
     </div>

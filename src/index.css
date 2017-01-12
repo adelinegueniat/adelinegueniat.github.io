@@ -37,6 +37,20 @@ font-family: 'Montserrat', sans-serif;
   text-align:center;
   }
 
+  .smallinput {
+      font-size:12px;
+      line-height:12px;
+      width:90%;
+      margin:5px 0px 5px 0px;
+  };
+
+alert-form {
+        color:darkred;
+        font-weight:800;
+        font-size:20px;
+        text-align:justify;
+
+}
 .centered {
     text-align:center;
 }
