@@ -1,14 +1,13 @@
 function loginController(Loginservices) {
   var $ctrl = this;
-  var loginkey = 'lgkey';
-  $ctrl.usrlog = '';
+  var $window = window;
 
-  $ctrl.getUser = function () {
-    Loginservices.getUser();
-  };
+  localStorage.userIsLogged = false;
 
   $ctrl.userLogin = function (usr, pwd) {
-    Loginservices.userLogin(usr, pwd);
+    if (Loginservices.userLogin(usr, pwd)) {
+      $window.location = '/accueil';
+    }
   };
 }
 

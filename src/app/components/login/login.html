@@ -22,11 +22,12 @@
     <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">  
       <input type="password" class="form-control" id="pwd" placeholder="Mot de passe" ng-model="pwdLog" required>
     </div>
-    </form>
+    
 <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
 <!--<button class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.loggedAsAdmin()">Connexion</button>-->
-<button class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.userLogin(usrLog, pwdLog)" ng-disabled="form.$invalid">Connexion</button>
+<input type="submit" value="Connexion" class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.userLogin(usrLog, pwdLog)" ng-disabled="form.$invalid">
 </div>
+</form>
 </div>
 </div>
 </div>
