@@ -1,4 +1,4 @@
-function benevolesController() {
+function benevolesController(SharingData) {
   var $ctrl = this;
   $ctrl.titre = 'Bénévoles';
   $ctrl.benevoles = [];
@@ -8,15 +8,16 @@ function benevolesController() {
   $ctrl.address = '';
   $ctrl.phone = '';
   var listebenevoleskey = 'lbkey';
+  $ctrl.listemissions = SharingData.sharedMissions;
 
   // Créer un localStorage à la première utilisation
   if (localStorage.getItem(listebenevoleskey) === null) {
     saveLocalStorage();
   }
 
-  $ctrl.benevoles = getListe();
+  $ctrl.benevoles = getListeBenevoles();
 
-  function getListe() {
+  function getListeBenevoles() {
     $ctrl.liste = angular.fromJson(localStorage.getItem(listebenevoleskey));
     return $ctrl.liste;
   }
@@ -25,8 +26,9 @@ function benevolesController() {
     localStorage.setItem(listebenevoleskey, angular.toJson($ctrl.benevoles));
   }
 
+
   $ctrl.addToBenevoles = function () {
-    var benevole = {titre: $ctrl.title, name: $ctrl.name, firstName: $ctrl.firstName, address: $ctrl.address, phone: $ctrl.phone, isWorking: false};
+    var benevole = { titre: $ctrl.title, name: $ctrl.name, firstName: $ctrl.firstName, address: $ctrl.address, phone: $ctrl.phone, isWorking: false, onDuty: false };
     $ctrl.benevoles.push(benevole);
     saveLocalStorage();
   };
@@ -37,7 +39,7 @@ function benevolesController() {
   };
 
   $ctrl.getBenevole = function () {
-    var position = $ctrl.getBenevolePosition();
+    var position = SharingData.getBenevolePosition();
     var benevole = $ctrl.benevoles[position];
     return benevole;
   };
@@ -69,7 +71,8 @@ function benevolesController() {
       firstName: "Bertrand",
       address: "Rue de la Gare 7, 2000 Neuchâtel",
       phone: "032 123 45 67",
-      isWorking: false
+      isWorking: false,
+      onDuty: false
     };
     var b = {
       titre: "Monsieur",
@@ -77,7 +80,9 @@ function benevolesController() {
       firstName: "Tom",
       address: "Rue du lac 22, 2502 Bienne",
       phone: "032 987 65 43",
-      isWorking: true
+      isWorking: true,
+      onDuty: false
+
     };
     var c = {
       titre: "Monsieur",
@@ -85,7 +90,9 @@ function benevolesController() {
       firstName: "Jake",
       address: "Rue des Prés 9, 3000 Berne",
       phone: "032 341 60 66",
-      isWorking: false
+      isWorking: false, 
+      onDuty: true
+
     };
     var d = {
       titre: "Madame",
@@ -93,7 +100,9 @@ function benevolesController() {
       firstName: "Irene",
       address: "Rue de l'Hôpital 41, 2800 Delémont",
       phone: "032 000 11 22",
-      isWorking: false
+      isWorking: false, 
+      onDuty: false
+
     };
     var e = {
       titre: "Madame",
@@ -101,7 +110,9 @@ function benevolesController() {
       firstName: "Aline",
       address: "Rue de l'Hôpital 45, 2800 Delémont",
       phone: "076 000 11 85",
-      isWorking: true
+      isWorking: true, 
+      onDuty: false
+
     };
     var f = {
       titre: "Monsieur",
@@ -109,7 +120,9 @@ function benevolesController() {
       firstName: "Mark",
       address: "Rue des voitures 3, 6000 Chur",
       phone: "078 456 28 96",
-      isWorking: false
+      isWorking: false, 
+      onDuty: false
+
     };
     $ctrl.benevoles.push(a, b, c, d, e, f);
     saveLocalStorage();
