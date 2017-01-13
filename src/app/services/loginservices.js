@@ -3,32 +3,29 @@ function Loginservices() {
   var $window = window;
 
   $ctrl.getUser = function () {
-    return $ctrl.user;
+    if (localStorage.userIsLogged) {
+      // $window.alert(localStorage.user);
+      return localStorage.user;
+    }
+
+    $ctrl.userLogout();
   };
 
   $ctrl.userLogin = function (usr, pwd) {
-    if (usr === 'Francis' && pwd === '1234' || usr === 'Adeline' && pwd === '1234') {
-      $ctrl.user = usr;
-      $ctrl.pass = pwd;
-
-      $window.location = '/accueil';
-    } else {
-      $window.alert("Erreur ! L'utilisateur et le mot de passe ne correspondent pas !");
+    if (usr === 'francis' && pwd === '1234' || usr === 'adeline' && pwd === '1234') {
+      localStorage.user = usr;
+      localStorage.userIsLogged = true;
+      return true;
     }
+
+    $window.alert("Erreur ! L'utilisateur et le mot de passe ne correspondent pas !");
+    return false;
   };
 
   $ctrl.userLogout = function () {
-    if ($ctrl.userIsLogged()) {
-      $window.alert("Vous êtes déjà déconnecté !");
-    } else {
-      $window.alert("Déconnection effectuée avec succès !");
-    }
-  };
-
-  $ctrl.userIsLogged = function () {
-    if ($ctrl.user === null && $ctrl.pass === null) {
-      return false;
-    }
+    localStorage.user = '';
+    localStorage.userIsLogged = false;
+    $window.location = '/login';
   };
 }
 
@@ -39,4 +36,3 @@ function Loginservices() {
 angular
   .module('app')
   .service('Loginservices', Loginservices);
-

@@ -1,4 +1,9 @@
-function homeController() {
+function homeController(Loginservices) {
+  var $ctrl = this;
+
+  $ctrl.getUser = function () {
+    return Loginservices.getUser();
+  };
 }
 
 angular

@@ -1,4 +1,4 @@
-<div class="component" ng-hide="!$ctrl.hideBar()" ng-show="$ctrl.hideBar()">
+<div class="component">
   <!-- Static navbar -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -19,9 +19,9 @@
           <li><a href="/benevoles" ng-click="isCollapsed = true">Bénévoles</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a><span class="glyphicon glyphicon-user"></span> {{$ctrl.getUser()}}</a></li>
+          <li><a><span class="glyphicon glyphicon-user"></span> {{ $ctrl.getUser() }}</a></li>
           
-          <li><a href="/login" ng-click="$ctrl.userLogout()"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a></li>
+          <li><a href ="" ng-click="$ctrl.userLogout()"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
