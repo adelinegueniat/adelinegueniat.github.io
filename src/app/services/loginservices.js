@@ -2,19 +2,22 @@ function Loginservices() {
   var $ctrl = this;
   var $window = window;
 
+  if (location.pathname === '/') {
+    localStorage.user = '';
+  }
+
   $ctrl.getUser = function () {
-    if (localStorage.userIsLogged) {
-      // $window.alert(localStorage.user);
+    if (localStorage.user !== '') {
       return localStorage.user;
     }
-
-    $ctrl.userLogout();
+    if (location.pathname !== '/') {
+      $ctrl.userLogout();
+    }
   };
 
   $ctrl.userLogin = function (usr, pwd) {
     if (usr === 'francis' && pwd === '1234' || usr === 'adeline' && pwd === '1234') {
       localStorage.user = usr;
-      localStorage.userIsLogged = true;
       return true;
     }
 
@@ -24,8 +27,7 @@ function Loginservices() {
 
   $ctrl.userLogout = function () {
     localStorage.user = '';
-    localStorage.userIsLogged = false;
-    $window.location = '/login';
+    $window.location = '/';
   };
 }
 
