@@ -18,9 +18,14 @@ function missionsController(SharingData) {
   }
 
   $ctrl.addToMissions = function () {
+    var dateObj = new Date($ctrl.date);
+    var dateString = dateObj.getDate() + "." + (dateObj.getMonth() + 1) + "." + dateObj.getFullYear();
+    var heureObj = new Date($ctrl.heure);
+    var heureString = heureObj.getHours() + "h" + heureObj.getMinutes();
+
     var mission = {
-      date: Date($ctrl.date),
-      heure: Date($ctrl.heure),
+      date: dateString,
+      heure: heureString,
       depart: $ctrl.depart,
       destination: $ctrl.destination,
       client: $ctrl.client,
@@ -60,6 +65,8 @@ function missionsController(SharingData) {
     mission.isDone = true;
     saveLocalStorage();
     SharingData.putOffDuty(mission.driver.id);
+    $ctrl.listebenevoles = SharingData.getAllBenevoles();
+
 
 
   };

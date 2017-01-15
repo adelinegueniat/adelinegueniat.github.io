@@ -28,11 +28,11 @@
           <div align="center">
             <form name="form" ng-submit="$ctrl.addToMissions()" role="form" class="form-group" style="padding-top:20px;">
               <div class="form-inline" ng-class="{ 'has-error': form.date.$touched && form.date.$error.required }">
-                <input type="text" class="smallinput" name="date" id="date" placeholder="Date" class="form-control" ng-model="$ctrl.date"
+                <input type="date" class="smallinput" name="date" id="date" placeholder="Date" class="form-control" ng-model="$ctrl.date"
                   required />
               </div>
               <div class="form-inline" ng-class="{ 'has-error': form.heure.$touched && form.heure.$error.required }">
-                <input type="text" class="smallinput" name="heure" id="heure" placeholder="Heure" class="form-control" ng-model="$ctrl.heure"
+                <input type="time" class="smallinput" name="heure" id="heure" placeholder="Heure" class="form-control" ng-model="$ctrl.heure"
                   required />
               </div>
               <div class="form-inline" ng-class="{ 'has-error': form.depart.$touched && form.depart.$error.required }">
@@ -173,6 +173,7 @@
         </div>
       </div>
     </div>
+
     <!-- /.container -->
     <center><button class="btn btn-danger btn-sm" ng-click="$ctrl.dataTest()"> Données test</button> <button class="btn btn-warning btn-sm"
         ng-click="$ctrl.deleteData()">Supprimer les données en cache</button></center>
