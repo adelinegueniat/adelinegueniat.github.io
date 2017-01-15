@@ -28,7 +28,9 @@ function benevolesController(SharingData) {
 
 
   $ctrl.addToBenevoles = function () {
-    var benevole = { titre: $ctrl.title, name: $ctrl.name, firstName: $ctrl.firstName, address: $ctrl.address, phone: $ctrl.phone, isWorking: false, onDuty: false };
+    var benevole = { id: null, titre: $ctrl.title, name: $ctrl.name, firstName: $ctrl.firstName, address: $ctrl.address, phone: $ctrl.phone, isWorking: false, onDuty: false };
+    var lastBenevole = $ctrl.benevoles[$ctrl.benevoles.length - 1] || { id: 0 };
+    benevole.id = lastBenevole.id + 1;
     $ctrl.benevoles.push(benevole);
     saveLocalStorage();
   };
@@ -66,6 +68,7 @@ function benevolesController(SharingData) {
 
   $ctrl.dataTest = function () {
     var a = {
+      id : 1, 
       titre: "Monsieur",
       name: "Alpha",
       firstName: "Bertrand",
@@ -75,6 +78,7 @@ function benevolesController(SharingData) {
       onDuty: false
     };
     var b = {
+       id : 2, 
       titre: "Monsieur",
       name: "Bravo",
       firstName: "Tom",
@@ -85,6 +89,7 @@ function benevolesController(SharingData) {
 
     };
     var c = {
+      id : 3, 
       titre: "Monsieur",
       name: "Charlie",
       firstName: "Jake",
@@ -95,6 +100,7 @@ function benevolesController(SharingData) {
 
     };
     var d = {
+      id : 4,
       titre: "Madame",
       name: "Delta",
       firstName: "Irene",
@@ -105,6 +111,7 @@ function benevolesController(SharingData) {
 
     };
     var e = {
+      id : 5,
       titre: "Madame",
       name: "Echo",
       firstName: "Aline",
@@ -115,6 +122,7 @@ function benevolesController(SharingData) {
 
     };
     var f = {
+      id : 6,
       titre: "Monsieur",
       name: "Foxtrot",
       firstName: "Mark",
