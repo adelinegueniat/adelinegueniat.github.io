@@ -50,6 +50,11 @@ function missionsController(SharingData) {
     saveLocalStorage();
   };
 
+  $ctrl.rollback = function () {
+    $ctrl.missions.pop();
+    saveLocalStorage();
+  };
+
   $ctrl.putOnDuty = function (benevole, mission) {
     SharingData.putBenevoleOnDuty(benevole, mission);
     saveLocalStorage();
