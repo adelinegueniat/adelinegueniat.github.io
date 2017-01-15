@@ -2,7 +2,8 @@ function missionsController(SharingData) {
   var $ctrl = this;
   $ctrl.missions = [];
   var listemissionskey = 'lmkey';
-  $ctrl.listebenevoles = SharingData.sharedBenevoles;
+  $ctrl.listebenevoles = SharingData.getAllBenevoles();
+
 
   // Créer un localStorage à la première utilisation
   if (localStorage.getItem(listemissionskey) === null) {
@@ -24,7 +25,7 @@ function missionsController(SharingData) {
       destination: $ctrl.destination,
       client: $ctrl.client,
       clientPhone: $ctrl.clientPhone,
-      driver: { drivern: '', driverfn: '' },
+      driver: { id: null, name: '', firstname: '' },
       isDone: false,
       isWaiting: true
     };
@@ -57,12 +58,10 @@ function missionsController(SharingData) {
 
   $ctrl.archive = function (mission) {
     mission.isDone = true;
-    for (var i = 0; i < SharingData.sharedBenevoles.length; i++) {
-      if (SharingData.sharedBenevoles[i].benevole.name.equals(name) === true) {
-        SharingData.sharedBenevoles[i].onDuty = false;}       
-    }
-    SharingData.saveChangesBenevole();
     saveLocalStorage();
+    SharingData.putOffDuty(mission.driver.id);
+
+
   };
 
   function saveLocalStorage() {
