@@ -73,11 +73,12 @@
             <div class="panel-body">
               <table class="table">
                 <tr>
-                  <th class="hidden-xs col-md-2 col-lg-1 display-cell">Titre</th>
-                  <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Nom</th>
-                  <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Prénom</th>
+                  <th class="hidden-xs col-md-1 col-lg-1 display-cell">Titre</th>
+                  <th class="col-xs-2 col-md-2 col-lg-2 display-cell">Nom</th>
+                  <th class="col-xs-2 col-md-2 col-lg-2 display-cell">Prénom</th>
                   <th class="hidden-xs col-md-2 col-lg-3 display-cell">Adresse</th>
-                  <th class="col-xs-2 col-md-2 col-lg-3 display-cell">Téléphone</th>
+                  <th class="col-xs-2 col-md-2 col-lg-2 display-cell">Téléphone</th>
+                  <th class="col-xs-1 col-md-1 col-lg-1 display-cell">Etat</th> 
                   <th class="col-xs-1 col-md-2 col-lg-1 display-cell centered">Mettre en congé</th>
                 </tr>
 
@@ -88,7 +89,10 @@
                   <td>{{ benevole.firstName }}</td>
                   <td class="hidden-xs">{{ benevole.address }}</td>
                   <td>{{ benevole.phone }}</td>
-                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.toggle(benevole)"></button></td>
+                  <td ng-if="benevole.onDuty"> en route </td>
+                  <td ng-if="!benevole.onDuty"> en attente </td>
+
+                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.toggle(benevole)" ng-disabled="benevole.onDuty"></button></td>
                 </tr>
               </table>
             </div>
