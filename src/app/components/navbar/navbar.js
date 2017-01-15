@@ -1,6 +1,10 @@
 function navbarController(Loginservices) {
   var $ctrl = this;
 
+  $ctrl.pageLogin = function () {
+    return location.pathname === '/';
+  };
+
   $ctrl.getUser = function () {
     return Loginservices.getUser();
   };
