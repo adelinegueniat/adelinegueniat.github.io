@@ -81,9 +81,9 @@
                 <th class="col-xs-1 col-md-2 col-lg-1 display-cell">Date / Heure</th>
                 <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Départ</th>
                 <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Destination</th>
-                <th class="col-xs-1 col-md-2 col-lg-3 display-cell">Client</th>
+                <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Client</th>
                 <th class="col-xs-2 col-md-2 col-lg-3 display-cell">Tél. client</th>
-                <th class="col-xs-1 col-md-2 col-lg-1 display-cell centered">Attribuer un chauffeur</th>
+                <th class="col-xs-1 col-md-2 col-lg-2 display-cell centered">Attribuer un chauffeur</th>
               </tr>
 
 
@@ -158,12 +158,15 @@
                 <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Départ</th>
                 <th class="col-xs-1 col-md-2 col-lg-2 display-cell">Destination</th>
                 <th class="col-xs-1 col-md-2 col-lg-3 display-cell">Client</th>
+                <th class="col-xs-1 col-md-2 col-lg-3 display-cell">Chauffeur</th>
               </tr>
               <tr ng-repeat="mission in $ctrl.missions" ng-if="mission.isDone">
-                <td class="col-xs-1">{{ mission.date }} / {{ mission.heure }}</td>
+                <td>{{ mission.date }} / {{ mission.heure }}</td>
                 <td>{{ mission.depart }}</td>
                 <td>{{ mission.destination }}</td>
-                <td class="col-xs-1">{{ mission.client }}</td>
+                <td>{{ mission.client }}</td>
+                <td>{{ mission.driver.firstname }} {{ mission.driver.name }}</td>
+
               </tr>
             </table>
           </div>
