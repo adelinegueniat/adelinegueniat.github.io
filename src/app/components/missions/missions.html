@@ -21,10 +21,10 @@
       </div>
       <div class="col-lg-12">
 
-        <div class="panel panel-info" ng-show="show">
+        <div class="panel panel-success" ng-show="show">
           <div class="panel-heading">
-            <h5>Nouvelle mission</h2>
-          </div>
+              <h4>Ajouter une mission</h4>
+            </div>
           <div align="center">
             <form name="form" ng-submit="$ctrl.addToMissions()" role="form" class="form-group" style="padding-top:20px;">
               <div class="form-inline" ng-class="{ 'has-error': form.date.$touched && form.date.$error.required }">
@@ -58,7 +58,7 @@
               <span ng-show="form.client.$touched && form.client.$error.required" class="alert-form">Nom du client. requis</span>
               <span ng-show="form.clientPhone.$touched && form.clientPhone.$error.required" class="alert-form">Numéro de téléphone du client requis.</span>
               <div class="form-actions form-inline smallinput" align="center">
-                <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-primary btn-sm btn-block">Ajouter</button>
+                <button type="submit" ng-disabled="form.$invalid" ng-click="show = !show; confirm = true" class="btn btn-success btn-sm btn-block">Ajouter</button>
               </div>
             </form>
           </div>
@@ -137,7 +137,7 @@
                 <td class="col-xs-1">{{ mission.client }}</td>
                 <td>{{ mission.clientPhone }}</td>
                 <td>{{ mission.driver.firstname }} {{ mission.driver.name}} </td>
-                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-remove" ng-click="$ctrl.archive(mission)"></button></td>
+                  <td class="centered"><button class="btn btn-secondary glyphicon glyphicon-ok" ng-click="$ctrl.archive(mission)"></button></td>
               </tr>
             </table>
           </div>

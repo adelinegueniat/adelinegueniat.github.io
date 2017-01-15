@@ -1,6 +1,13 @@
-function loginController(Loginservices) {
+function loginController(Loginservices, $scope) {
   var $ctrl = this;
   var $window = window;
+  var $console = console;
+
+  $scope.showMessage = false;
+  $scope.showSubmitMessage = function () {
+    $console.log('calling');
+    $scope.showMessage = true;
+  };
 
   $ctrl.userLogin = function (usr, pwd) {
     if (Loginservices.userLogin(usr, pwd)) {
