@@ -135,6 +135,11 @@ function benevolesController(SharingData) {
     $ctrl.benevoles.push(a, b, c, d, e, f);
     saveLocalStorage();
   };
+
+  $ctrl.deleteData = function () {
+    localStorage.removeItem(listebenevoleskey);
+    location.reload();
+  };
 }
 
 
