@@ -110,9 +110,10 @@ gulp.task('deploy', function() {
  ```
  3) Il est désormais possible de déployer le dossier ```dist``` sur gh-pages en seulement deux commandes : ```gulp build``` puis ```gulp deploy```.
  
- 
  ## 3. Components
+ 
  ##### 3.1. Création des components en ligne de commande :  
+ 
  ```yo angular-fountain1:component --name mission --dir app/components``` 
  
  ## 4.Services
