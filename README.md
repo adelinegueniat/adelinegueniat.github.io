@@ -1,19 +1,29 @@
-# projet-fheche_agueniat_2igpt
-----------------------------
-## BECOME A HERO : NEZ ROUGE
+# BECOME A HERO : NEZ ROUGE
+
+# **Description**
+_________
 #### Participants 
 - Francis Hêche
 - Adeline Gueniat
 
+#### Projet
+Cette application s'adresse au logisticien de Nez Rouge, qui reçoit l'appel d'un client, introduit les informations de la mission dans le système et l'attribue à un chauffeur. Dans notre cas, c'est aussi le logisticien qui gère les bénévoles (ajout du bénévole dans le système, retrait, mise en activité, ...).
+
+
+# **Technique**
+_________
 #### Outils de développement
 - Visual Studio Code
 - Git Shell, GitHub
 - Yeoman (fountain-angular1)
 - Angular JS
+- npm
 - bower : installations de dépendances web
 - grunt / gulp : tâches automatisées
+ 
 
 ## 1. Setup du projet
+
 ##### 1.1. Création du dossier du projet
 ```mkdir mon-dossier```
 
@@ -114,7 +124,39 @@ gulp.task('deploy', function() {
  
  ##### 3.1. Création des components en ligne de commande :  
  
- ```yo angular-fountain1:component --name mission --dir app/components``` 
+ ```yo angular-fountain1:component --name missions --dir components/missions``` 
+ Faire de même pour login, benevoles, navbar, home.
+ - **missions** : liste de missions, gestion dans le .js
+ - **login** : page de login
+ - **benevoles** : liste des bénévoles, gestion dans le .js 
+ - **navbar** : gestion de la navbar dans un component plutôt que dans l'index.html directement, afin de pouvoir gérer son affichage plus facilement (via le controller)
+ - **home** : page d'accueil
+ ## 4. Services
+ ```yo angular-fountain1:service --name loginservices --dir services``` 
+Faire de même pour sharingData.
+- **loginservices** :  gère les logins (connexion, déconnexion, stockage de l'user dans le localStorage, l'affichage de l'user, ...)
+- **sharingData** : partage les datas de bénévoles et de missions, afin de synchroniser les actions (la fin d'une mission entraîne la libération du bénévole, ...)
+Pour utiliser un service, il faut l'injecter dans le controller du composant.
+
+ ## 4. Plugin
+ ##### 4.1 Plugin angular-validation-messages
  
- ## 4.Services
+ Gère les messages de validation des formulaires (ex. un champ requis qui est ignoré lève un message d'erreur)
+ **Installation** : 
+ ```bower install angular-validation-messages --save``` 
+
+
+# **Problèmes rencontrés**
+_________
+
+##### Temps
+Il a fallu beaucoup se documenter et utiliser des approches que nous ne connaissions pas ; ceci couplé à la quantité de travail à accomplir pour la mise en place de ce projet, en parallèle aux travaux demandés dans nos autres cours, nous avons manqué de temps pour peaufiner notre application comme nous le souhaitions. 
+##### AngularJS
+L'utilisation d'AngularJS a été compliquée, car nous ne connaissions pas ce framework et la documentation, bien que complète, était compliquée à parcourir compte tenu du temps qui nous était alloué à la réalisation de ce projet.
+
+##### Deploy
+Nous avons rencontrés beaucoup de problèmes pour faire un deploy fonctionnel de notre projet, dû aux liens à modifier, la navbar qui ne s'affichait pas comme nous le souhaitions en local, ... 
+
+##### Installation du plugin
+Installer le plugin nous a posé quelques problèmes, dû à l'oubli de la commande --save et donc de l'absence des dépendences.
 
