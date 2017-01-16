@@ -14,7 +14,7 @@
         <h1 class="page-header">
           Missions
 
-          <a href="#" ng-click="show = !show; confirm = false;" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
+          <a href="#" ng-click="show = !show; confirm = false; return false;" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
           </a>
         </h1>
 
@@ -99,7 +99,7 @@
                        {{benevole.firstName}} {{benevole.name}}
                       </option>
                   </select>
-                  <a href="#" ng-click="$ctrl.putOnDuty(benevole, mission)" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
+                  <a href="#" ng-click="$ctrl.putOnDuty(benevole, mission); return false;" class="glyphicon glyphicon-plus-sign" style="display: block; float: right; text-decoration: none; color: black;">
                   </a>
 
                 </td>

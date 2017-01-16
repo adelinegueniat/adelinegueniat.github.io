@@ -27,7 +27,7 @@ function Loginservices() {
 
   $ctrl.userLogout = function () {
     localStorage.user = '';
-    $window.location = '/';
+    $window.location = '/projet-fheche_agueniat_2igpt/#!/';
   };
 }
 

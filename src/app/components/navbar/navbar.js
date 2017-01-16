@@ -2,7 +2,7 @@ function navbarController(Loginservices) {
   var $ctrl = this;
 
   $ctrl.pageLogin = function () {
-    return localStorage.user === '';
+    return location.pathname === '/projet-fheche_agueniat_2igpt/#!/';
   };
 
   $ctrl.getUser = function () {
