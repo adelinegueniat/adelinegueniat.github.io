@@ -9,23 +9,23 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('login', {
-      url: 'projet-fheche_agueniat_2igpt/',
+      url: '/',
       component: 'login'
     })
     .state('home', {
-      url: 'projet-fheche_agueniat_2igpt/accueil',
+      url: '/accueil',
       component: 'home'
     })
     .state('benevoles', {
-      url: 'projet-fheche_agueniat_2igpt/benevoles',
+      url: '/benevoles',
       component: 'benevoles'
     })
     .state('missions', {
-      url: 'projet-fheche_agueniat_2igpt/missions',
+      url: '/missions',
       component: 'missions'
     })
     .state('inscriptions', {
-      url: 'projet-fheche_agueniat_2igpt/inscription',
+      url: '/inscription',
       component: 'inscriptions'
     });
 }
