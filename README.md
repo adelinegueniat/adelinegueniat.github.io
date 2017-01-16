@@ -155,7 +155,7 @@ Il a fallu beaucoup se documenter et utiliser des approches que nous ne connaiss
 L'utilisation d'AngularJS a été compliquée, car nous ne connaissions pas ce framework et la documentation, bien que complète, était compliquée à parcourir compte tenu du temps qui nous était alloué à la réalisation de ce projet.
 
 ##### Deploy
-Nous avons rencontrés beaucoup de problèmes pour faire un deploy fonctionnel de notre projet, dû aux liens à modifier, la navbar qui ne s'affichait pas comme nous le souhaitions en local, ... 
+Nous avons rencontrés beaucoup de problèmes pour faire un deploy fonctionnel de notre projet, dû aux liens à modifier, la navbar qui ne s'affichait pas comme nous le souhaitions en local, ... Aussi, les glyphicon ne s'affichent pas dans notre version minifiée.
 
 ##### Installation du plugin
 Installer le plugin nous a posé quelques problèmes, dû à l'oubli de la commande --save et donc de l'absence des dépendences.
