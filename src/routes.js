@@ -4,28 +4,28 @@ angular
 
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-  $locationProvider.html5Mode(true).hashPrefix('!');
+  $locationProvider.html5Mode(false).hashPrefix('!');
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('login', {
-      url: '/',
+      url: 'projet-fheche_agueniat_2igpt/',
       component: 'login'
     })
     .state('home', {
-      url: '/accueil',
+      url: 'projet-fheche_agueniat_2igpt/accueil',
       component: 'home'
     })
     .state('benevoles', {
-      url: '/benevoles',
+      url: 'projet-fheche_agueniat_2igpt/benevoles',
       component: 'benevoles'
     })
     .state('missions', {
-      url: '/missions',
+      url: 'projet-fheche_agueniat_2igpt/missions',
       component: 'missions'
     })
     .state('inscriptions', {
-      url: '/inscription',
+      url: 'projet-fheche_agueniat_2igpt/inscription',
       component: 'inscriptions'
     });
 }
