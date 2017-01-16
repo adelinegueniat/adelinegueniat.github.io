@@ -3,6 +3,8 @@ function loginController(Loginservices, $scope) {
   var $window = window;
   var $console = console;
 
+  localStorage.user = '';
+
   $scope.showMessage = false;
   $scope.showSubmitMessage = function () {
     $console.log('calling');

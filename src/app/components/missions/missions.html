@@ -64,10 +64,18 @@
         </div>
       </div>
 
-      <div class="alert alert-success" ng-show="confirm">
-        Le trajet reliant {{$ctrl.depart}} à {{$ctrl.destination}}, demandé par {{ $ctrl.client }}, a été ajouté à la liste d'attente.
-        <a href="#" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</a>
+      <div class="panel panel-success" ng-show="confirm">
+        <div class="panel-heading">
+          <h4>Le trajet reliant {{$ctrl.depart}} à {{$ctrl.destination}}, demandé par {{ $ctrl.client }}, a été ajouté à la liste d'attente.</h4>
+          <button class="btn btn-danger" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</button>
+        </div>
       </div>
+
+      <div class="panel panel-danger" ng-show="rollback">
+           <div class="panel-heading">
+          <h4>Opération annulée.</h4>
+           </div>
+        </div>
 
       <div class="col-md-12" id="waitlist">
         <div class="panel panel-default">

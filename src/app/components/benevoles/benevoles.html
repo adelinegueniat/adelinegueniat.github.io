@@ -53,9 +53,10 @@
         
 
         <div class="panel panel-success" ng-show="confirm">
-           <div class="panel-heading">
-          <h4>Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste. <a href="#" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</a></h4>
-        </div>
+          <div class="panel-heading">
+            <h4>Le bénévole {{$ctrl.firstName}} {{$ctrl.name}} a été ajouté à la liste. 
+            <button class="btn btn-danger" ng-click="$ctrl.rollback(); confirm = false; rollback = true;">Annuler</button>
+          </div>
         </div>
 
         <div class="panel panel-danger" ng-show="rollback">
