@@ -160,3 +160,8 @@ Nous avons rencontrés beaucoup de problèmes pour faire un deploy fonctionnel d
 ##### Installation du plugin
 Installer le plugin nous a posé quelques problèmes, dû à l'oubli de la commande --save et donc de l'absence des dépendences.
 
+# **Retour d'expérience**
+_________
+
+Ce projet nous a permis de nous rendre compte de la quantité de travail à effectuer dans le cadre du développement d'une application WEB. 
+
