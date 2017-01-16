@@ -23,7 +23,7 @@
         <div class="panel panel-success" ng-show="show" id="ajout">
           <div class="panel-heading">
               <h4>Ajouter une mission</h4>
-            </div>
+          </div>
           <div align="center">
             <form name="form" ng-submit="$ctrl.addToMissions()" role="form" class="form-group" style="padding-top:20px;">
               <div class="form-inline" ng-class="{ 'has-error': form.date.$touched && form.date.$error.required }">
@@ -62,7 +62,6 @@
             </form>
           </div>
         </div>
-      </div>
 
       <div class="panel panel-success" ng-show="confirm">
         <div class="panel-heading">
