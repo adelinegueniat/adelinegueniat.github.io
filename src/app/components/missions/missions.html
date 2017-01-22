@@ -91,15 +91,13 @@
                 <td class="col-xs-1">{{ mission.client }}</td>
                 <td>{{ mission.clientPhone }}</td>
                 <td class="centered">
-                  <div>
-                    <select class="form-control" name="selectBenevole" id="selectBenevole" ng-model="benevole" style="display: block; float: left;">
+                    <select class="form-control" name="selectBenevole" id="selectBenevole" ng-model="benevole">
                       <option ng-repeat="benevole in $ctrl.listebenevoles" ng-value="benevole" ng-if="benevole.isWorking && !benevole.onDuty">
                         {{benevole.firstName}} {{benevole.name}}
                       </option>
                     </select>
                     
-                    <button class="btn btn-success" ng-click="$ctrl.putOnDuty(benevole, mission);" style="display: block; float: right; text-decoration: none;"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
-                  <div>
+                    <input type="submit" value="Lancer la mission" class="btn btn-success" ng-click="$ctrl.putOnDuty(benevole, mission);" style="width: 100%; text-decoration: none; margin-top: 10px;"></input>
                 </td>
               </tr>
             </table>

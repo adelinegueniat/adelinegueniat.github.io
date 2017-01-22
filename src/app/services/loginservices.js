@@ -16,7 +16,7 @@ function Loginservices() {
   };
 
   $ctrl.userLogin = function (usr, pwd) {
-    if (usr === 'Francis' && pwd === '1234' || usr === 'Adeline' && pwd === '1234') {
+    if (usr === 'Demo' && pwd === '1234') {
       localStorage.user = usr;
       return true;
     }
