@@ -5,35 +5,37 @@
 
     <!-- Marketing Icons Section -->
     <div class="row">
-            <div class="col-md-12" style="text-align: center; padding-top:40px;">
-              <div style="display: block; margin-left: auto; margin-right: auto; width:100%; max-width: 500px;">
-        <img src="./img/opnezrouge.jpg" width="90%" style="padding-bottom: 20px;">
+      <div class="col-md-12" style="text-align: center; padding-top:40px;">
+
+        <div style="display: block; margin-left: auto; margin-right: auto; width:100%; max-width: 500px;">
+          <img src="./img/opnezrouge.jpg" width="90%" style="padding-bottom: 20px;">
         </div>
 
-<div class="panel panel-default" style="display: block; margin-left: auto; margin-right: auto; width:90%; max-width: 400px;">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-check"></i> Connexion</h4>
-  </div>
-  <div class="panel-body">
-    <!--<form name="form" role="form">-->
-      <form vmsg-form ng-submit="showSubmitMessage()">
-    <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
-      <input ng-model="usrLog" class="form-control" type="text" placeholder="Nom d'utilisateur" vmsg="{hideTrigger: 'keydown'}" required ng-minlength="3"/>
-    </div>
-    <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">  
-      <!-- <input type="password" class="form-control" id="pwd" placeholder="Mot de passe" ng-model="pwdLog" required> -->
-      <input ng-model="pwdLog" class="form-control" type="password" placeholder="Mot de passe" vmsg="{hideTrigger: 'keydown'}" required ng-minlength="4"/>
-    </div>
-    
-<div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
-<!--<button class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.loggedAsAdmin()">Connexion</button>-->
-<input type="submit" value="Connexion" class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.userLogin(usrLog, pwdLog)" ng-disabled="form.$invalid">
-</div>
-</form>
+        <div class="panel panel-default" style="display: block; margin-left: auto; margin-right: auto; width:90%; max-width: 400px;">
 
-</div>
-</div>
-</div>
-</div>
-</div>
+          <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check"></i> Connexion</h4>
+          </div>
+
+          <div class="panel-body">
+            <form vmsg-form ng-submit="showSubmitMessage()">
+              <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
+                <input ng-model="usrLog" class="form-control" type="text" placeholder="Nom d'utilisateur" vmsg="{hideTrigger: 'keydown'}" required ng-minlength="3"/>
+              </div>
+
+              <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">  
+                <input ng-model="pwdLog" class="form-control" type="password" placeholder="Mot de passe" vmsg="{hideTrigger: 'keydown'}" required ng-minlength="4"/>
+              </div>
+        
+              <div class="form-group" style="display: block; margin-left: auto; margin-right: auto; width:90%;">
+                <input type="submit" value="Connexion" class="btn btn-danger" style="width: 100%;" ng-click="$ctrl.userLogin(usrLog, pwdLog)" ng-disabled="form.$invalid">
+              </div>
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

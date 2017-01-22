@@ -1,5 +1,6 @@
 function missionsController(SharingData) {
   var $ctrl = this;
+  $ctrl.titre = "Missions";
   $ctrl.missions = [];
   var listemissionskey = 'lmkey';
   $ctrl.listebenevoles = SharingData.getAllBenevoles();
