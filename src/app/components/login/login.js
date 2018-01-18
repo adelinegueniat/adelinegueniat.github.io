@@ -13,7 +13,7 @@ function loginController(Loginservices, $scope) {
 
   $ctrl.userLogin = function (usr, pwd) {
     if (Loginservices.userLogin(usr, pwd)) {
-      $window.location = '/projet-fheche_agueniat_2igpt/#!/accueil';
+      $window.location = '/accueil';
     }
   };
 }
